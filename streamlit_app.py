@@ -45,10 +45,10 @@ values ('""" + ingredients_string + """','""" + name_on_order + """')
 
 
 # New section to display smoothiefroot nutrition information
-import requests  
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
-st.text(smoothiefroot_response.json())
-if time_to_insert:
-    session.sql(my_insert_stmt).collect()
-    st.success('Your Smoothie is ordered!', icon="✅")
+    import requests  
+    smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+    st.text(smoothiefroot_response.json())
+    if time_to_insert:
+        session.sql(my_insert_stmt).collect()
+        st.success('Your Smoothie is ordered!', icon="✅")
         #st.success(f"Your Smoothie is ordered, {name_on_order}!", icon="✅")
